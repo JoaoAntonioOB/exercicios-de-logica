@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programação</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 1 de lógica de programação de JavaScript</h1>
+    </header>
+
+    <script>
+        var jog1 = parseInt(prompt("Jogador 1 digite um número: "))
+        var jog2 = parseInt(prompt("Jogador 2 digite um número: "))
+        if(jog1 == jog2){
+            window.alert("Empate")
+        } else {
+            var number = parseInt(Math.random() * 2)
+            window.alert(number)
+            if(number == 0){
+                if(jog1 < jog2){
+                    window.alert("Jogador 1 ganhou")
+                } else {
+                    window.alert("Jogador 2 ganhou")
+                }
+                } else {
+                    if(jog1 > jog2){
+                        window.alert("Jogador 1 ganhou")
+                    } else {
+                        window.alert("Jogador 2 ganhou")
+                    }
+                }
+        }
+ 
+        
+    </script>
+</body>
+</html>

@@ -15,27 +15,30 @@
     <input type="button" value="*" onclick="iniciarCalculo('*')">
     <input type="button" value="/" onclick="iniciarCalculo('/')">
 
-    <div>
-        <input type="text" name="n1" id="n1" placeholder="Digite um número">
-    </div>
-
     <div id="output">
 
     </div>
 
     <script>
-        /*let n2 = prompt("Digite um número: ")
+        let n2 = prompt("Digite um número: ")
         n2 = parseFloat(n2)
-        escreve(n2)*/
+        escreve(n2)
 
         function iniciarCalculo(simbolo, n1, n22){
-            var n1 = document.getElementById('n1').value
+            var n1 = document.getElementById('output').textContent
             n1 = parseFloat(n1)
 
             var n2 = prompt('Digite outro número')
             n2 = parseFloat(n2)
 
-            var msg = calcular(simbolo, n1, n2)
+            try {
+                var msg = calcular(simbolo, n1, n2)
+            } catch (e) {
+                alert(e)
+                return 0 
+            }
+
+            
 
             escreve(msg)
         }
@@ -48,6 +51,15 @@
         
 
         function calcular(simbolo, n1, n2){
+
+            if(simbolo !== '+'  && simbolo !== '-' && simbolo !== '*' && simbolo !== '/'){
+                throw new Error('Digite um simbolo valido')
+            }
+
+            if( isNaN(n1) || isNaN(n2)){
+                throw new Error('Chama passando somente números')
+            }
+
             var numeroCalculado = null
             numeroCalculado = parseFloat(numeroCalculado)
 

@@ -17,17 +17,21 @@
 
     <script>
 
-        var  produtos = new Array('caneta', 'lapis', 'tesoura', 'borracha')
-        produtos.push('caderno')
+        var arr = new Array(25, 30, 45, 28, 0, 12, 78, 64)
+        var soma = 0
 
-        var output = document.querySelector('#output')
+       var somaDosPares =  somaOsPares(arr)
 
-        var msg = ''
-        for (var i = 0; i < produtos.length; i++){
-            msg += 'produto ' + (i + 1) + ': ' + produtos[i] + '<br>'
+       alert('A soma é: ' + somaDosPares)
+    
+    function somaOsPares(arr){
+        for(var c = 0; c < arr.length; c++){
+            if( !isNaN(arr[c]) && arr[c] % 2 === 0){
+                soma += arr[c]
+            }
         }
-        
-        output.innerHTML = msg
+        return soma
+    }
 
     </script>
 </body>
